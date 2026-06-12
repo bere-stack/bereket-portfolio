@@ -1,0 +1,6 @@
+{
+  "name": "Bereket Portfolio",
+  "description": "A elegant digital portfolio website with a Cinematic Dark and Ethiopian Artistic Heritage theme built using raw web components.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
