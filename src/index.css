@@ -147,3 +147,24 @@ body {
   z-index: 0;
   pointer-events: none;
 }
+/* ላይት ሙድ (Light Mode) - ነጭ ጀርባ እና ጥቁር ጽሑፍ */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --card-bg: #f9fafb;
+}
+
+/* ዳርክ ሙድ (Dark Mode) - ጥቁር ጀርባ እና ነጭ ጽሑፍ */
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #f3f4f6;
+  --card-bg: #1e1e1e;
+}
+
+/* ቀለማቱ በዌብሳይቱ ላይ እንዲተገበሩ ማድረግ */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+}
