@@ -9,54 +9,44 @@
   --color-dark: #060608;
   --color-offwhite: #f5f5f7;
 }
-/* ላይት ሙድ (Light Mode) - ነጭ ጀርባ እና ጥቁር ጽሑፍ */
+
+/* Light theme defaults */
 :root {
-  --bg-color: #ffffff;
-  --text-color: #1a1a1a;
-  --card-bg: #f5f5f5;
-  --accent-color: #2563eb; /* ሰማያዊ */
+  --bg-color: #f5f5f7;
+  --text-color: #060608;
+  --card-bg: #ffffff;
 }
 
-/* ዳርክ ሙድ (Dark Mode) - ጥቁር ጀርባ እና ነጭ ጽሑፍ */
+/* Dark theme overrides */
 [data-theme='dark'] {
-  --bg-color: #121212;
-  --text-color: #f3f4f6;
-  --card-bg: #1e1e1e;
-  --accent-color: #60a5fa; /* ፈዘዝ ያለ ሰማያዊ */
+  --bg-color: #060608;
+  --text-color: #f5f5f7;
+  --card-bg: #121214;
 }
 
-/* ቀለማቱን በዌብሳይቱ ላይ መተግበር */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
-}
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
 
 body {
-  background-color: #060608;
-  color: #f5f5f7;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom selection coloring */
 ::selection {
   background-color: #c5a059;
   color: #060608;
 }
 
-/* High-fidelity custom scrollbar matching a cinematic dark theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #060608;
+  background: var(--bg-color);
 }
 ::-webkit-scrollbar-thumb {
   background: #c5a059;
@@ -66,7 +56,6 @@ body {
   background: #b22222;
 }
 
-/* Authentic Ethiopian Tilet Pattern Stripes CSS repeating gradient */
 .tilet-pattern {
   background: repeating-linear-gradient(
     90deg,
@@ -86,7 +75,6 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Authentic Tilet Diagonal Weave Accent */
 .tilet-diagonal {
   background: repeating-linear-gradient(
     45deg,
@@ -99,7 +87,6 @@ body {
   );
 }
 
-/* Premium smooth animations and interactive glows */
 .cta-button {
   background: #c5a059;
   color: #060608;
@@ -118,7 +105,7 @@ body {
 
 .project-card {
   border: 1px solid rgba(197, 160, 89, 0.18);
-  background: rgba(10, 10, 14, 0.7);
+  background: var(--card-bg);
   backdrop-filter: blur(12px);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -129,7 +116,6 @@ body {
   box-shadow: 0 15px 35px rgba(197, 160, 89, 0.18);
 }
 
-/* Cinematic fixed-bg effect and dark gradient overlay */
 .hero-bg-overlay {
   background: linear-gradient(
     to bottom,
@@ -139,32 +125,10 @@ body {
   );
 }
 
-/* Decorative subtle glow spots for added premium aesthetic depth */
 .glow-orb {
   position: absolute;
   border-radius: 50%;
   filter: blur(120px);
   z-index: 0;
   pointer-events: none;
-}
-/* ላይት ሙድ (Light Mode) - ነጭ ጀርባ እና ጥቁር ጽሑፍ */
-:root {
-  --bg-color: #ffffff;
-  --text-color: #1a1a1a;
-  --card-bg: #f9fafb;
-}
-
-/* ዳርክ ሙድ (Dark Mode) - ጥቁር ጀርባ እና ነጭ ጽሑፍ */
-[data-theme='dark'] {
-  --bg-color: #121212;
-  --text-color: #f3f4f6;
-  --card-bg: #1e1e1e;
-}
-
-/* ቀለማቱ በዌብሳይቱ ላይ እንዲተገበሩ ማድረግ */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 0;
 }
