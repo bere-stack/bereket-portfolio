@@ -30,7 +30,7 @@ export default function App() {
       navContact: "Contact",
       heritageSub: "WHERE HERITAGE MEETS CODE",
       heroTitle: "Hello, I'm Bereket",
-      heroBio: "A Front-End Developer crafting simple, impactful digital experiences inspired by design, storytelling, and Ethiopian artistic heritage.",
+      heroBio: "A Full Stack Developer crafting simple, impactful digital experiences inspired by design, storytelling, and Ethiopian artistic heritage.",
       heroCTA: "View My Work",
       
       projectsTitle: "Featured Projects",
