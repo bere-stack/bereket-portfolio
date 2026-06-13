@@ -132,3 +132,43 @@ body {
   z-index: 0;
   pointer-events: none;
 }
+/* Color Palette definition */
+:root {
+  --bg-color: #f7f4ef;
+  --text-color: #1a1612;
+  --card-bg: #ffffff;
+  /* Light mode cinematic overlay gradient */
+  --hero-gradient: linear-gradient(
+    to bottom,
+    rgba(247, 244, 239, 0.4) 0%,
+    rgba(247, 244, 239, 0.75) 60%,
+    rgba(247, 244, 239, 1) 100%
+  );
+}
+
+[data-theme='dark'] {
+  --bg-color: #0d0b0a;
+  --text-color: #f5f5f7;
+  --card-bg: #14110f;
+  /* Dark mode cinematic overlay gradient matching your screenshot */
+  --hero-gradient: linear-gradient(
+    to bottom,
+    rgba(13, 11, 10, 0.5) 0%,
+    rgba(13, 11, 10, 0.85) 60%,
+    rgba(13, 11, 10, 1) 100%
+  );
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Updating your overlay section to use the dynamic gradient variable */
+.hero-bg-overlay {
+  background: var(--hero-gradient);
+  transition: background 0.4s ease;
+}
