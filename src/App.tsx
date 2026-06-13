@@ -198,6 +198,8 @@ export default function App() {
             >
               <Globe2 className="w-3.5 h-3.5" />
               {lang === 'en' ? "አማርኛ" : "English"}
+              <button onClick={toggleTheme} style={{ padding: '8px 16px', cursor: 'pointer', marginLeft: '10px' }}>
+  {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
             </button>
           </div>
 
