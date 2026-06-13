@@ -9,7 +9,30 @@
   --color-dark: #060608;
   --color-offwhite: #f5f5f7;
 }
+/* ላይት ሙድ (Light Mode) - ነጭ ጀርባ እና ጥቁር ጽሑፍ */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --card-bg: #f5f5f5;
+  --accent-color: #2563eb; /* ሰማያዊ */
+}
 
+/* ዳርክ ሙድ (Dark Mode) - ጥቁር ጀርባ እና ነጭ ጽሑፍ */
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #f3f4f6;
+  --card-bg: #1e1e1e;
+  --accent-color: #60a5fa; /* ፈዘዝ ያለ ሰማያዊ */
+}
+
+/* ቀለማቱን በዌብሳይቱ ላይ መተግበር */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
