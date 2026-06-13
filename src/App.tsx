@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { 
   Github, 
   Linkedin, 
@@ -18,6 +18,18 @@ import {
 
 export default function App() {
   const [lang, setLang] = useState<'en' | 'am'>('en');
+  
+  // 👇 እዚህ ጋ የእኔን የሙድ (Theme) ኮድ ጨምረው
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+  // 👆 የሙድ ኮድ እዚህ ላይ ያብቃል
+
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
