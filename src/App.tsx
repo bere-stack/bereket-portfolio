@@ -30,7 +30,7 @@ export default function App() {
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
   // 👆 የሙድ ኮድ እዚህ ላይ ያብቃል
 
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+  const [formState, setFormState] = useState<{ name: string; email: string; message: string }>({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -124,11 +124,11 @@ export default function App() {
     }
   };
 
-  const current = content[lang];
+  const current = content[lang as keyof typeof content];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormState(prev => ({ ...prev, [name]: value }));
+    setFormState((prev: { name: string; email: string; message: string }) => ({ ...prev, [name]: value }));
   };
 
   const handleFormSubmit = (e: React.FormEvent) => {
@@ -145,7 +145,7 @@ export default function App() {
   };
 
   const toggleLang = () => {
-    setLang(l => l === 'en' ? 'am' : 'en');
+    setLang((l: 'en' | 'am') => l === 'en' ? 'am' : 'en');
   };
 
   return (
@@ -167,7 +167,7 @@ export default function App() {
                 src="me.jpg" 
                 alt="Bereket" 
                 className="profile-pic w-12 h-12 rounded-full object-cover grayscale brightness-95 contrast-105 border-2 border-[#060608] shadow-md shadow-black/80"
-                onError={(e) => {
+                onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                   // Fallback in case me.jpg loading is delayed
                   (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200";
                 }}
@@ -198,8 +198,9 @@ export default function App() {
             >
               <Globe2 className="w-3.5 h-3.5" />
               {lang === 'en' ? "አማርኛ" : "English"}
-              <button onClick={toggleTheme} style={{ padding: '8px 16px', cursor: 'pointer', marginLeft: '10px' }}>
-  {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+            </button>
+            <button onClick={toggleTheme} style={{ padding: '8px 16px', cursor: 'pointer', marginLeft: '10px' }}>
+              {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
             </button>
           </div>
 
