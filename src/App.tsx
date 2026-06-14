@@ -333,12 +333,27 @@ export default function App() {
         </section>
       </main>
 
-      <footer className={`border-t py-12 relative ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-900' : 'bg-white border-gray-200'}`}>
-        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
-          <h3 className="text-2xl font-black tracking-[0.25em] font-sans text-[#2563eb] mb-6">BEREKET</h3>
-          <p className="text-center text-xs text-gray-400">&copy; {new Date().getFullYear()} {current.footerCredits}</p>
-        </div>
-      </footer>
+      <footer className={border-t py-12 relative ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-900' : 'bg-white border-gray-200'}}>
+  <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
+    <h3 className="text-2xl font-black tracking-[0.25em] font-sans text-[#2563eb] mb-6">BEREKET</h3>
+    
+    {/* አይከኖቹ የሚገቡበት ቦታ */}
+    <div className="flex flex-wrap justify-center gap-6 mb-6 text-2xl text-gray-400">
+      <a href="https://facebook.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition"><FaFacebook /></a>
+      <a href="https://github.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-gray-100 transition"><FaGithub /></a>
+      <a href="https://t.me/yourprofile" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition"><FaTelegram /></a>
+      <a href="https://instagram.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-pink-600 transition"><FaInstagram /></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="hover:text-blue-700 transition"><FaLinkedin /></a>
+      <a href="https://twitter.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition"><FaTwitter /></a>
+      <a href="https://dribbble.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-pink-500 transition"><SiDribbble /></a>
+      <a href="https://discord.com/users/yourprofile" target="_blank" rel="noreferrer" className="hover:text-indigo-500 transition"><FaDiscord /></a>
+    </div>
+
+    <p className="text-sm text-gray-500">
+      &copy; {new Date().getFullYear()} Designed & Compiled by Bereket. All rights reserved.
+    </p>
+  </div>
+</footer>
     </div>
   );
 }
