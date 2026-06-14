@@ -200,7 +200,7 @@ export default function App() {
       </nav>
 
       <main className="flex-grow z-10 pt-20">
-        <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/my-africa.jpg')" }}>
+        <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/my-africa.jpe')" }}>
           <div className="relative max-w-4xl mx-auto px-4 text-center flex flex-col items-center justify-center py-20 z-10">
             <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-bold tracking-[0.16em] mb-6 uppercase min-h-[36px] ${theme === 'dark' ? 'border-[#2563eb]/30 bg-[#0a0a0a]/90 text-[#2563eb]' : 'border-[#2563eb]/20 bg-blue-50 text-[#2563eb]'}`}>
               <Sparkles className="w-3.5 h-3.5" />
