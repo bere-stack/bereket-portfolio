@@ -49,7 +49,7 @@ export default function App() {
 
       proj2Title: "Biruh Tesfa Furniture",
       proj2Desc: "A premium and modern e-commerce platform designed for high-quality furniture, showcasing advanced layout structures, optimized user conversion, and elegant product portfolios.",
-      proj2Tech: ["React", "Tailwind CSS", "Vite"],
+      proj2Tech: ["React", "Tailwind CSS", "Vite","JavaScript (ES6)"],
       proj2Link: "https://biruh-tesfa-furniture-1o69.vercel.app/",
 
       proj3Title: "Jano Photo Studio",
@@ -93,7 +93,7 @@ export default function App() {
  
       proj2Title: "ብሩህ ተስፋ ፈርኒቸር",
       proj2Desc: "ከፍተኛ ጥራት ያላቸውን የቤትና የቢሮ ፈርኒቸሮችን ለገበያ የሚያቀርብ፣ ለተጠቃሚ ምቹ የሆኑ ዘመናዊ መዋቅሮችን እና ማራኪ ዲዛይን ያካተተ ፕሪሚየም የኢ-ኮሜርስ ድረ-ገጽ።", 
-      proj2Tech: ["React", "Tailwind CSS", "Vite"], 
+      proj2Tech: ["React", "Tailwind CSS", "Vite","ጃቫስክሪፕት"], 
       proj2Link: "https://biruh-tesfa-furniture-1o69.vercel.app/",
 
       proj3Title: "ጃኖ ፎቶ ስቱዲዮ",
