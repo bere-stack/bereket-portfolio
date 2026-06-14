@@ -57,7 +57,7 @@ export default function App() {
       proj2Tech: ["React", "OpenWeather API", "Recharts", "Vite"],
 
       proj3Title: "Jano Photo Studio",
-      proj3Desc: "A premium fine-art and cultural photography platform showcasing advanced layout structures, rich galleries, and scheduling integration.",
+       proj3Desc: "A premium fine-art and cultural photography platform showcasing advanced layout structures, rich galleries, and scheduling integration.",
       proj3Tech: ["HTML5", "CSS Grid", "JavaScript (ES6)", "Intersections API"],
 
       aboutTitle: "About Me",
