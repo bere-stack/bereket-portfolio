@@ -55,10 +55,12 @@ export default function App() {
       proj2Title: "Weather Dashboard",
       proj2Desc: "A minimal, clean weather tracking application that fetches real-time environmental data and presents it with modern minimalist UI layouts.",
       proj2Tech: ["React", "OpenWeather API", "Recharts", "Vite"],
+      
 
       proj3Title: "Jano Photo Studio",
        proj3Desc: "A premium fine-art and cultural photography platform showcasing advanced layout structures, rich galleries, and scheduling integration.",
       proj3Tech: ["HTML5", "CSS Grid", "JavaScript (ES6)", "Intersections API"],
+      proj3Link: <a href="https://jano-photo-studio.vercel.app/" target="_blank" rel="noopener noreferrer"></a>,
 
       aboutTitle: "About Me",
       aboutBio1: "I am a dedicated Front-End Engineer who visualizes technology through an artistic lens. Combining modern frameworks like React and Tailwind CSS with rich cultural aesthetics, I create high-performance web solutions that tell stories and engage users.",
@@ -102,6 +104,7 @@ export default function App() {
       proj3Title: "ጃኖ ፎቶ ስቱዲዮ",
       proj3Desc: "ልዩ ልዩ አስደናቂ ማዕከለ-ስዕላት እና የዕቅድ ማስያዣን የያዘ ጥራት ያለው የባህልና ፎቶግራፊ ማሳያ ድረ-ገጽ።",
       proj3Tech: ["HTML5", "CSS ግሪድ", "ጃቫስክሪፕት", "ማሳያ ኤ.ፒ.አይ"],
+      proj3Link: <a href="https://jano-photo-studio.vercel.app/" target="_blank" rel="noopener noreferrer"></a>,
 
       aboutTitle: "ስለ እኔ",
       aboutBio1: "እኔ ቴክኖሎጂን በኪነ-ጥበብ መነጽር የምመለከት የፊት-ለፊት (Front-End) መሐንዲስ ነኝ። እንደ ሪአክት (React) እና ቴልዊንድ (Tailwind CSS) ያሉ ዘመናዊ መሣሪያዎችን ከባህላዊ ውበት ጋር በማዋሃድ ታሪክን የሚተርኩና ተጠቃሚዎችን የሚስቡ ከፍተኛ አፈጻጸም ያላቸውን የድረ-ገጽ መፍትሄዎችን እሠራለሁ።",
