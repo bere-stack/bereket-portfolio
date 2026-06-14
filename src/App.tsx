@@ -104,7 +104,7 @@ export default function App() {
       proj3Title: "ጃኖ ፎቶ ስቱዲዮ",
       proj3Desc: "ልዩ ልዩ አስደናቂ ማዕከለ-ስዕላት እና የዕቅድ ማስያዣን የያዘ ጥራት ያለው የባህልና ፎቶግራፊ ማሳያ ድረ-ገጽ።",
       proj3Tech: ["HTML5", "CSS ግሪድ", "ጃቫስክሪፕት", "ማሳያ ኤ.ፒ.አይ"],
-      proj3Link: <a href="https://jano-photo-studio.vercel.app/" target="_blank" rel="noopener noreferrer"></a>,
+      proj3Link: "https://jano-photo-studio.vercel.app/",
 
       aboutTitle: "ስለ እኔ",
       aboutBio1: "እኔ ቴክኖሎጂን በኪነ-ጥበብ መነጽር የምመለከት የፊት-ለፊት (Front-End) መሐንዲስ ነኝ። እንደ ሪአክት (React) እና ቴልዊንድ (Tailwind CSS) ያሉ ዘመናዊ መሣሪያዎችን ከባህላዊ ውበት ጋር በማዋሃድ ታሪክን የሚተርኩና ተጠቃሚዎችን የሚስቡ ከፍተኛ አፈጻጸም ያላቸውን የድረ-ገጽ መፍትሄዎችን እሠራለሁ።",
