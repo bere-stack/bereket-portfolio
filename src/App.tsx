@@ -339,7 +339,7 @@ export default function App() {
               </div>
 
               {/* Card 3: Jano Photo Studio */}
-              <div className="project-card flex flex-col p-6 rounded-sm relative group">
+             <a href={current.proj3Link} target="_blank" rel="noopener noreferrer" className="project-card flex flex-col p-6 rounded-sm relative group block decoration-none">
                 <div className="absolute top-0 right-0 p-3 text-[#c5a059]/20 group-hover:text-[#c5a059] transition-colors duration-300">
                   <Sparkles className="w-5 h-5" />
                 </div>
@@ -358,7 +358,7 @@ export default function App() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </a>
 
             </div>
           </div>
