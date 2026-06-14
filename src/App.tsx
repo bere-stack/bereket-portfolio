@@ -52,9 +52,10 @@ export default function App() {
       proj1Desc: "A cinematic streaming web application interface built with React, featuring live movie rows, banner logic, and Firebase authentication.",
       proj1Tech: ["React", "Firebase", "TMDB API", "Tailwind CSS"],
 
-      proj2Title: "Weather Dashboard",
-      proj2Desc: "A minimal, clean weather tracking application that fetches real-time environmental data and presents it with modern minimalist UI layouts.",
-      proj2Tech: ["React", "OpenWeather API", "Recharts", "Vite"],
+      proj2Title: "Biruh Tesfa Furniture",
+      proj2Desc: "A modern and elegant e-commerce and showcase platform for high-quality furniture, featuring beautiful layouts and premium designs.",
+      proj2Tech: ["React", "Tailwind CSS", "Vite"],
+      proj2Link: "https://biruh-tesfa-furniture-1o69.vercel.app/", //
       
 
       proj3Title: "Jano Photo Studio",
@@ -96,9 +97,10 @@ export default function App() {
       proj1Desc: "ፊልሞችን፣ ተንቀሳቃሽ ምስሎችን እና የፋየርቤዝ ማረጋገጫን (Firebase Auth) ያካተተ በሪአክት (React) የተገነባ የፊልም ማሳያ ድረ-ገጽ።",
       proj1Tech: ["ሪአክት (React)", "ፋየርቤዝ", "ቲ.ኤም.ዲ.ቢ", "ቴልዊንድ"],
 
-      proj2Title: "የአየር ሁኔታ ማሳያ",
-      proj2Desc: "ቅጽበታዊ የአየር ሁኔታ መረጃን በመሳብ ቀላል እና ውብ በሆነ አቀራረብ የሚያሳይ ዘመናዊ መተግበሪያ።",
-      proj2Tech: ["ሪአክት (React)", "የአየር ሁኔታ ኤ.ፒ.አይ", "ሪቻርትስ", "ቪት"],
+     proj2Title: "ብሩህ ተስፋ ፈርኒቸር",
+     proj2Desc: "ከፍተኛ ጥራት ያላቸውን የቤትና የቢሮ ፈርኒቸሮችን የሚያሳይ፣ ዘመናዊ እና ማራኪ ዲዛይን ያለው የዌብሳይት ፕሮጀክት።", 
+     proj2Tech: ["React", "Tailwind CSS", "Vite"], 
+     proj2Link: "https://biruh-tesfa-furniture-1o69.vercel.app/", //
 
       proj3Title: "ጃኖ ፎቶ ስቱዲዮ",
       proj3Desc: "ልዩ ልዩ አስደናቂ ማዕከለ-ስዕላት እና የዕቅድ ማስያዣን የያዘ ጥራት ያለው የባህልና ፎቶግራፊ ማሳያ ድረ-ገጽ።",
@@ -316,7 +318,7 @@ export default function App() {
               </div>
 
               {/* Card 2: Weather Dashboard */}
-              <div className="project-card flex flex-col p-6 rounded-sm relative group">
+            <a href={current.proj2Link} target="_blank" rel="noopener noreferrer" className="project-card flex flex-col p-6 rounded-sm relative group block decoration-none">
                 <div className="absolute top-0 right-0 p-3 text-[#c5a059]/20 group-hover:text-[#c5a059] transition-colors duration-300">
                   <Globe2 className="w-5 h-5" />
                 </div>
@@ -335,7 +337,7 @@ export default function App() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </a>
 
               {/* Card 3: Jano Photo Studio */}
              <a href={current.proj3Link} target="_blank" rel="noopener noreferrer" className="project-card flex flex-col p-6 rounded-sm relative group block decoration-none">
