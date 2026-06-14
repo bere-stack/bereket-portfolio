@@ -345,7 +345,7 @@ export default function App() {
       <a href="https://github.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-gray-100 transition"><FaGithub /></a>
       <a href="https://t.me/@bereket091" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition"><FaTelegram /></a>
       <a href="https://instagram.com/haylueco" target="_blank" rel="noreferrer" className="hover:text-pink-600 transition"><FaInstagram /></a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="hover:text-blue-700 transition"><FaLinkedin /></a>
+      <a href="https://linkedin.com/in/https://www.linkedin.com/in/bereket-haylu-709279352" target="_blank" rel="noreferrer" className="hover:text-blue-700 transition"><FaLinkedin /></a>
       <a href="https://twitter.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition"><FaTwitter /></a>
       <a href="https://dribbble.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-pink-500 transition"><SiDribbble /></a>
       <a href="https://discord.com/users/yourprofile" target="_blank" rel="noreferrer" className="hover:text-indigo-500 transition"><FaDiscord /></a>
