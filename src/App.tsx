@@ -341,10 +341,10 @@ export default function App() {
     
     {/* አይከኖቹ የሚገቡበት ቦታ */}
     <div className="flex flex-wrap justify-center gap-6 mb-6 text-2xl text-gray-400">
-      <a href="https://facebook.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition"><FaFacebook /></a>
+      <a href="https://facebook.com/bereket.haylu.516834" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition"><FaFacebook /></a>
       <a href="https://github.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-gray-100 transition"><FaGithub /></a>
-      <a href="https://t.me/yourprofile" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition"><FaTelegram /></a>
-      <a href="https://instagram.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-pink-600 transition"><FaInstagram /></a>
+      <a href="https://t.me/@bereket091" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition"><FaTelegram /></a>
+      <a href="https://instagram.com/haylueco" target="_blank" rel="noreferrer" className="hover:text-pink-600 transition"><FaInstagram /></a>
       <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="hover:text-blue-700 transition"><FaLinkedin /></a>
       <a href="https://twitter.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition"><FaTwitter /></a>
       <a href="https://dribbble.com/yourprofile" target="_blank" rel="noreferrer" className="hover:text-pink-500 transition"><SiDribbble /></a>
