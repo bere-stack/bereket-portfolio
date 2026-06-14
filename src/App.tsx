@@ -41,8 +41,8 @@ export default function App() {
       navProjects: "Projects",
       navContact: "Contact",
       heritageSub: "WHERE HERITAGE MEETS CODE",
-      heroTitle: "Hello, I'm Bereket",
-      heroBio: "A Full Stack Developer crafting simple, impactful digital experiences inspired by design, storytelling, and Ethiopian artistic heritage.",
+      heroTitle: "Hi, I'm Bereket",
+      heroBio: "A Full-Stack Developer and Designer bridging the gap between analytical logic, business economics, and cultural aesthetics to craft impactful digital solutions.",
       heroCTA: "View My Work",
       
       projectsTitle: "Featured Projects",
@@ -86,8 +86,8 @@ export default function App() {
       navProjects: "ፕሮጀክቶች",
       navContact: "ያግኙኝ",
       heritageSub: "ባህልና ጥበብ ከኮድ ጋር የሚገናኙበት",
-      heroTitle: "ጤና ይስጥልኝ፣ እኔ በረከት ነኝ",
-      heroBio: "በዲዛይን፣ በታሪክ አተራረክ እና በኢትዮጵያ የስነ-ጥበብ ቅርሶች በመነሳሳት ሁለንተናዊ እና ተሰሚነት ያላቸውን ዲጂታል ተሞክሮዎች የምሰራ የፊት-ለፊት (Front-End) አልሚ ነኝ።",
+      heroTitle: "ሰላም! በረከት እባላለሁ፣",
+heroBio: "ተፅዕኖ ፈጣሪ የሆኑ ዲጂታል መፍትሄዎችን ለመገንባት፤ የኮድ አመክንዮን፣ የቢዝነስ ኢኮኖሚክስን እና የባህል ውበትን አስተባብሬ የምሰራ Full-Stack Developer እና ዲዛይነር ነኝ።",
       heroCTA: "የሠራኋቸውን እዩ",
       
       projectsTitle: "የተመረጡ ፕሮጀክቶች",
