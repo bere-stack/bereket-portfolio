@@ -1,3 +1,5 @@
+import { FaFacebook, FaGithub, FaTelegram, FaInstagram, FaLinkedin, FaTwitter, FaDiscord } from 'react-icons/fa';
+import { SiDribbble } from 'react-icons/si';
 import React, { useState, useEffect } from 'react';
 import { 
   Github, 
