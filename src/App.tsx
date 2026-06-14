@@ -335,9 +335,9 @@ export default function App() {
         </section>
       </main>
 
-      <footer className={border-t py-12 relative ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-900' : 'bg-white border-gray-200'}}>
-  <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
-    <h3 className="text-2xl font-black tracking-[0.25em] font-sans text-[#2563eb] mb-6">BEREKET</h3>
+      <footer className={`border-t py-12 relative ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-900' : 'bg-white border-gray-200'}`}>
+        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
+          <h3 className="text-2xl font-black tracking-[0.25em] font-sans text-[#2563eb] mb-6">BEREKET</h3>
     
     {/* አይከኖቹ የሚገቡበት ቦታ */}
     <div className="flex flex-wrap justify-center gap-6 mb-6 text-2xl text-gray-400">
