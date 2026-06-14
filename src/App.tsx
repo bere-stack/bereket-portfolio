@@ -8,10 +8,11 @@ import {
   Globe2, 
   CheckCircle2, 
   Send, 
-  Flame, 
   Code2, 
   Info,
-  Layers
+  Layers,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 export default function App() {
@@ -76,7 +77,7 @@ export default function App() {
     },
     am: {
       navAbout: "ስለ እኔ",
-      navProjects: "ፕሮጀክቶች",
+      navProjects: "ፕሮجرክቶች",
       navContact: "ያግኙኝ",
       heritageSub: "ባህልና ጥበብ ከኮድ ጋር የሚገናኙበት",
       heroTitle: "ጤና ይስጥልኝ! በረከት እባላለሁ፣",
@@ -149,132 +150,133 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col relative bg-[#14110f] text-[#f5f5f7] selection:bg-[#eab308]/30" id="top">
+    <div className={`min-h-screen flex flex-col relative transition-colors duration-300 ${theme === 'dark' ? 'bg-[#0a0a0a] text-[#ffffff]' : 'bg-[#f8f9fa] text-[#1a1a1a]'}`} id="top">
       
-      <div className="w-[400px] h-[400px] top-[10%] left-[5%] bg-[rgba(234,179,8,0.05)] pointer-events-none absolute rounded-full blur-[120px]"></div>
-      <div className="w-[500px] h-[500px] top-[40%] right-[3%] bg-[rgba(178,34,34,0.04)] pointer-events-none absolute rounded-full blur-[140px]"></div>
+      {theme === 'dark' && (
+        <>
+          <div className="w-[400px] h-[400px] top-[10%] left-[5%] bg-[rgba(37,99,235,0.08)] pointer-events-none absolute rounded-full blur-[120px]"></div>
+          <div className="w-[500px] h-[500px] top-[40%] right-[3%] bg-[rgba(37,99,235,0.05)] pointer-events-none absolute rounded-full blur-[140px]"></div>
+        </>
+      )}
 
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#14110f]/85 backdrop-blur-md border-b border-[#eab308]/10">
+      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${theme === 'dark' ? 'bg-[#0a0a0a]/85 border-[#2563eb]/20' : 'bg-[#f8f9fa]/85 border-gray-200'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="relative">
-              <img 
-                src="me.jpg" 
-                alt="Bereket" 
-                className="w-12 h-12 rounded-full object-cover grayscale border-2 border-[#14110f] shadow-lg"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200";
-                }}
-              />
-            </div>
-            <a href="#top" className="text-2xl font-bold tracking-[0.2em] font-serif text-[#eab308]">BEREKET</a>
+            <a href="#top" className="text-2xl font-black tracking-[0.25em] font-sans text-[#2563eb]">BEREKET</a>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
-            <a href="#about" className="text-sm font-medium tracking-wider text-[#f5f5f7]/80 hover:text-[#eab308] transition-colors">{current.navAbout}</a>
-            <a href="#projects" className="text-sm font-medium tracking-wider text-[#f5f5f7]/80 hover:text-[#eab308] transition-colors">{current.navProjects}</a>
-            <a href="#contact" className="text-sm font-medium tracking-wider text-[#f5f5f7]/80 hover:text-[#eab308] transition-colors">{current.navContact}</a>
+            <a href="#about" className={`text-sm font-semibold tracking-wider transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-[#2563eb]' : 'text-gray-600 hover:text-[#2563eb]'}`}>{current.navAbout}</a>
+            <a href="#projects" className={`text-sm font-semibold tracking-wider transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-[#2563eb]' : 'text-gray-600 hover:text-[#2563eb]'}`}>{current.navProjects}</a>
+            <a href="#contact" className={`text-sm font-semibold tracking-wider transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-[#2563eb]' : 'text-gray-600 hover:text-[#2563eb]'}`}>{current.navContact}</a>
             
-            <button onClick={() => setLang(l => l === 'en' ? 'am' : 'en')} className="px-4 py-2 rounded-sm border border-[#eab308]/30 text-[#eab308] hover:bg-[#eab308] hover:text-[#14110f] text-xs font-semibold flex items-center gap-1.5 min-h-[44px]">
+            <div className="h-4 w-[1px] bg-gray-300 dark:bg-gray-700"></div>
+
+            {/* Light/Dark Mode Switcher */}
+            <button onClick={toggleTheme} className={`p-2 rounded-full transition-all min-h-[44px] min-w-[44px] flex items-center justify-center border ${theme === 'dark' ? 'border-gray-800 hover:bg-gray-900 text-yellow-400' : 'border-gray-200 hover:bg-gray-100 text-indigo-600'}`}>
+              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+
+            <button onClick={() => setLang(l => l === 'en' ? 'am' : 'en')} className="px-4 py-2 rounded-md border border-[#2563eb]/40 text-[#2563eb] hover:bg-[#2563eb] hover:text-white text-xs font-bold flex items-center gap-1.5 min-h-[44px]">
               <Globe2 className="w-3.5 h-3.5" />
               {lang === 'en' ? "አማርኛ" : "English"}
             </button>
           </div>
 
           <div className="md:hidden flex items-center gap-3">
-            <button onClick={() => setLang(l => l === 'en' ? 'am' : 'en')} className="px-3 py-2 rounded-sm border border-[#eab308]/40 text-[#eab308] text-xs font-semibold min-h-[44px]">
+            <button onClick={toggleTheme} className="p-2 text-gray-500 min-h-[44px]">
+              {theme === 'dark' ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-indigo-600" />}
+            </button>
+            <button onClick={() => setLang(l => l === 'en' ? 'am' : 'en')} className="px-3 py-2 rounded-md border border-[#2563eb]/40 text-[#2563eb] text-xs font-bold min-h-[44px]">
               {lang === 'en' ? "አማርኛ" : "EN"}
             </button>
           </div>
         </div>
-        <div className="h-[4px] w-full bg-gradient-to-r from-[#eab308] via-[#b22222] to-[#eab308]"></div>
       </nav>
 
       <main className="flex-grow z-10 pt-20">
-        <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url('my-africa.jpe')` }}>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#14110f]/60 via-[#14110f]/90 to-[#14110f]"></div>
-          
+        <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-cover bg-center">
           <div className="relative max-w-4xl mx-auto px-4 text-center flex flex-col items-center justify-center py-20 z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#eab308]/25 bg-[#14110f]/90 text-[#eab308] text-xs font-bold tracking-[0.16em] mb-6 uppercase min-h-[36px]">
+            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-bold tracking-[0.16em] mb-6 uppercase min-h-[36px] ${theme === 'dark' ? 'border-[#2563eb]/30 bg-[#0a0a0a]/90 text-[#2563eb]' : 'border-[#2563eb]/20 bg-blue-50 text-[#2563eb]'}`}>
               <Sparkles className="w-3.5 h-3.5" />
               {current.heritageSub}
             </div>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight font-serif text-[#f5f5f7] mb-6 leading-tight">
-              {lang === 'en' ? "Hi, I'm " : ""}<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#eab308] via-[#f7d070] to-[#eab308]">{lang === 'en' ? "Bereket" : "ጤና ይስጥልኝ! በረከት እባላለሁ፣"}</span>
+            <h1 className="text-5xl sm:text-7xl font-black tracking-tight font-sans mb-6 leading-tight">
+              {lang === 'en' ? "Hi, I'm " : ""}<span className="text-[#2563eb]">{lang === 'en' ? "Bereket" : "ጤና ይስጥልኝ! በረከት እባላለሁ፣"}</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-[#f5f5f7]/90 leading-relaxed max-w-2xl mb-10 px-2">
+            <p className={`text-base sm:text-xl leading-relaxed max-w-2xl mb-10 px-2 font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
               {current.heroBio}
             </p>
 
-            <a href="#projects" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-sm tracking-[0.15em] text-xs uppercase font-bold bg-[#eab308] text-[#14110f] hover:bg-[#eab308]/90 transition-all shadow-lg min-h-[48px] touch-manipulation">
+            <a href="#projects" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md tracking-[0.15em] text-xs uppercase font-bold bg-[#2563eb] text-white hover:bg-[#1d4ed8] transition-all shadow-lg min-h-[48px] touch-manipulation">
               {current.heroCTA}
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </section>
 
-        <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-[#eab308]/10 bg-[#1c1814]/30">
+        <section id="projects" className={`py-24 px-4 sm:px-6 lg:px-8 border-t ${theme === 'dark' ? 'border-gray-900 bg-gray-900/20' : 'border-gray-200 bg-gray-50'}`}>
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-widest font-serif text-[#eab308] mb-4 uppercase">{current.projectsTitle}</h2>
-              <p className="text-sm sm:text-base text-[#f5f5f7]/70 leading-relaxed">{current.projectsSubtitle}</p>
+              <h2 className="text-3xl sm:text-4xl font-black tracking-wider font-sans text-[#2563eb] mb-4 uppercase">{current.projectsTitle}</h2>
+              <p className={`text-sm sm:text-base leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{current.projectsSubtitle}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Project 1 */}
-              <div className="bg-[#14110f]/90 border border-[#eab308]/10 flex flex-col p-6 rounded-sm min-h-[280px]">
-                <span className="text-[10px] tracking-widest font-mono text-[#eab308]/60 font-bold uppercase mb-2">01 / ENTERTAINMENT</span>
-                <h3 className="text-xl font-bold font-serif text-[#f5f5f7] mb-3">{current.proj1Title}</h3>
-                <p className="text-sm text-[#f5f5f7]/75 leading-relaxed mb-6 flex-grow">{current.proj1Desc}</p>
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#eab308]/10">
-                  {current.proj1Tech.map((tech, i) => <span key={i} className="text-[10px] font-mono px-2 py-1 rounded bg-[#eab308]/5 text-[#eab308] border border-[#eab308]/10">{tech}</span>)}
+              <div className={`border flex flex-col p-6 rounded-lg min-h-[280px] ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-800' : 'bg-white border-gray-200 shadow-sm'}`}>
+                <span className="text-[10px] tracking-widest font-mono text-[#2563eb] font-bold uppercase mb-2">01 / ENTERTAINMENT</span>
+                <h3 className="text-xl font-bold font-sans mb-3">{current.proj1Title}</h3>
+                <p className={`text-sm leading-relaxed mb-6 flex-grow ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{current.proj1Desc}</p>
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100 dark:border-gray-800">
+                  {current.proj1Tech.map((tech, i) => <span key={i} className={`text-[10px] font-mono px-2 py-1 rounded border ${theme === 'dark' ? 'bg-gray-900 text-gray-300 border-gray-800' : 'bg-gray-50 text-gray-600 border-gray-200'}`}>{tech}</span>)}
                 </div>
               </div>
 
               {/* Project 2 - Clickable */}
-              <a href={current.proj2Link} target="_blank" rel="noopener noreferrer" className="bg-[#14110f]/90 border border-[#eab308]/15 flex flex-col p-6 rounded-sm hover:border-[#eab308] transition-all block min-h-[280px] active:scale-[0.99] touch-manipulation">
-                <span className="text-[10px] tracking-widest font-mono text-[#eab308] font-bold uppercase mb-2">02 / PREMIUM E-COMMERCE</span>
-                <h3 className="text-xl font-bold font-serif text-[#f5f5f7] mb-3">{current.proj2Title}</h3>
-                <p className="text-sm text-[#f5f5f7]/80 leading-relaxed mb-6 flex-grow">{current.proj2Desc}</p>
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#eab308]/20">
-                  {current.proj2Tech.map((tech, i) => <span key={i} className="text-[10px] font-mono px-2 py-1 rounded bg-[#eab308]/10 text-[#eab308] border border-[#eab308]/30">{tech}</span>)}
+              <a href={current.proj2Link} target="_blank" rel="noopener noreferrer" className={`border flex flex-col p-6 rounded-lg transition-all block min-h-[280px] active:scale-[0.99] touch-manipulation hover:border-[#2563eb] ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-800' : 'bg-white border-gray-200 shadow-sm'}`}>
+                <span className="text-[10px] tracking-widest font-mono text-[#2563eb] font-bold uppercase mb-2">02 / PREMIUM E-COMMERCE</span>
+                <h3 className="text-xl font-bold font-sans mb-3">{current.proj2Title}</h3>
+                <p className={`text-sm leading-relaxed mb-6 flex-grow ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{current.proj2Desc}</p>
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100 dark:border-gray-800">
+                  {current.proj2Tech.map((tech, i) => <span key={i} className={`text-[10px] font-mono px-2 py-1 rounded border ${theme === 'dark' ? 'bg-gray-900 text-gray-300 border-gray-800' : 'bg-gray-50 text-gray-600 border-gray-200'}`}>{tech}</span>)}
                 </div>
               </a>
 
               {/* Project 3 - Clickable */}
-              <a href={current.proj3Link} target="_blank" rel="noopener noreferrer" className="bg-[#14110f]/90 border border-[#eab308]/15 flex flex-col p-6 rounded-sm hover:border-[#eab308] transition-all block min-h-[280px] active:scale-[0.99] touch-manipulation">
-                <span className="text-[10px] tracking-widest font-mono text-[#eab308] font-bold uppercase mb-2">03 / DIGITAL ART PORTFOLIO</span>
-                <h3 className="text-xl font-bold font-serif text-[#f5f5f7] mb-3">{current.proj3Title}</h3>
-                <p className="text-sm text-[#f5f5f7]/80 leading-relaxed mb-6 flex-grow">{current.proj3Desc}</p>
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#eab308]/20">
-                  {current.proj3Tech.map((tech, i) => <span key={i} className="text-[10px] font-mono px-2 py-1 rounded bg-[#eab308]/10 text-[#eab308] border border-[#eab308]/30">{tech}</span>)}
+              <a href={current.proj3Link} target="_blank" rel="noopener noreferrer" className={`border flex flex-col p-6 rounded-lg transition-all block min-h-[280px] active:scale-[0.99] touch-manipulation hover:border-[#2563eb] ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-800' : 'bg-white border-gray-200 shadow-sm'}`}>
+                <span className="text-[10px] tracking-widest font-mono text-[#2563eb] font-bold uppercase mb-2">03 / DIGITAL ART PORTFOLIO</span>
+                <h3 className="text-xl font-bold font-sans mb-3">{current.proj3Title}</h3>
+                <p className={`text-sm leading-relaxed mb-6 flex-grow ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{current.proj3Desc}</p>
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100 dark:border-gray-800">
+                  {current.proj3Tech.map((tech, i) => <span key={i} className={`text-[10px] font-mono px-2 py-1 rounded border ${theme === 'dark' ? 'bg-gray-900 text-gray-300 border-gray-800' : 'bg-gray-50 text-gray-600 border-gray-200'}`}>{tech}</span>)}
                 </div>
               </a>
             </div>
           </div>
         </section>
 
-        <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-[#eab308]/10 bg-[#1a1512]/40">
+        <section id="about" className={`py-24 px-4 sm:px-6 lg:px-8 border-t ${theme === 'dark' ? 'border-gray-900 bg-gray-900/10' : 'border-gray-200 bg-white'}`}>
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="relative p-1 w-full max-w-sm mx-auto aspect-square rounded-sm border border-[#eab308]/20 bg-[#14110f]/95 flex flex-col items-center justify-center p-6 text-center">
-                <Code2 className="w-12 h-12 text-[#eab308] mb-4" />
-                <h3 className="font-serif text-[#f5f5f7] text-2xl font-bold mb-2">BEREKET</h3>
-                <span className="text-[10px] font-mono tracking-[0.25em] text-[#eab308] font-bold uppercase mb-4">FULL-STACK CRAFTSMAN</span>
+              <div className={`relative p-6 w-full max-w-sm mx-auto aspect-square rounded-xl border flex flex-col items-center justify-center text-center shadow-sm ${theme === 'dark' ? 'border-gray-800 bg-[#0a0a0a]' : 'border-gray-200 bg-gray-50'}`}>
+                <Code2 className="w-12 h-12 text-[#2563eb] mb-4" />
+                <h3 className="font-sans text-2xl font-black mb-2">BEREKET</h3>
+                <span className="text-[10px] font-mono tracking-[0.25em] text-[#2563eb] font-bold uppercase mb-4">FULL-STACK CRAFTSMAN</span>
               </div>
 
               <div>
-                <span className="text-[10px] font-mono font-bold text-[#eab308] mb-2 uppercase flex items-center gap-1.5"><Info className="w-3 h-3"/> BIOGRAPHY</span>
-                <h2 className="text-3xl sm:text-4xl font-extrabold font-serif text-[#f5f5f7] mb-6 uppercase">{current.aboutTitle}</h2>
-                <p className="text-sm sm:text-base text-[#f5f5f7]/90 mb-4 leading-relaxed">{current.aboutBio1}</p>
-                <p className="text-sm sm:text-base text-[#f5f5f7]/90 mb-8 leading-relaxed">{current.aboutBio2}</p>
+                <span className="text-[10px] font-mono font-bold text-[#2563eb] mb-2 uppercase flex items-center gap-1.5"><Info className="w-3 h-3"/> BIOGRAPHY</span>
+                <h2 className="text-3xl sm:text-4xl font-black font-sans mb-6 uppercase">{current.aboutTitle}</h2>
+                <p className={`text-sm sm:text-base mb-4 leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{current.aboutBio1}</p>
+                <p className={`text-sm sm:text-base mb-8 leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{current.aboutBio2}</p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[#eab308]/15">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-gray-200 dark:border-gray-800">
                   <div>
-                    <h4 className="font-serif text-[#eab308] text-base font-bold mb-3 flex items-center gap-2"><Layers className="w-4 h-4" /> {current.techHeading}</h4>
-                    <ul className="space-y-2 text-[#f5f5f7]/80 text-sm">
+                    <h4 className="font-sans text-[#2563eb] text-base font-bold mb-3 flex items-center gap-2"><Layers className="w-4 h-4" /> {current.techHeading}</h4>
+                    <ul className={`space-y-2 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                       <li>• Full-Stack Web Engineering</li>
                       <li>• React.js, Vite &amp; Tailwind CSS</li>
                       <li>• Graphic Design &amp; Digital Aesthetics</li>
@@ -287,36 +289,36 @@ export default function App() {
           </div>
         </section>
 
-        <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-[#eab308]/10">
+        <section id="contact" className={`py-24 px-4 sm:px-6 lg:px-8 border-t ${theme === 'dark' ? 'border-gray-900 bg-[#0a0a0a]' : 'border-gray-200 bg-gray-50'}`}>
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-widest font-serif text-[#eab308] mb-4 uppercase">{current.contactTitle}</h2>
-              <p className="text-sm sm:text-base text-[#f5f5f7]/70 max-w-2xl mx-auto">{current.contactSubtitle}</p>
+              <h2 className="text-3xl sm:text-4xl font-black tracking-wider font-sans text-[#2563eb] mb-4 uppercase">{current.contactTitle}</h2>
+              <p className={`text-sm sm:text-base max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{current.contactSubtitle}</p>
             </div>
 
-            <div className="bg-[#1a1512]/60 border border-[#eab308]/15 rounded-sm p-6 sm:p-10 shadow-2xl">
+            <div className={`border rounded-xl p-6 sm:p-10 shadow-xl ${theme === 'dark' ? 'bg-gray-900/40 border-gray-800' : 'bg-white border-gray-200'}`}>
               {isSubmitted ? (
                 <div className="text-center py-12">
-                  <h3 className="text-2xl font-bold font-serif text-[#f5f5f7] mb-3">{lang === 'en' ? "Thank You!" : "እናመሰግናለን!"}</h3>
-                  <p className="text-[#f5f5f7]/80 text-sm mb-8">{current.formSuccess}</p>
+                  <h3 className="text-2xl font-bold font-sans mb-3">{lang === 'en' ? "Thank You!" : "እናመሰግናለን!"}</h3>
+                  <p className="text-gray-500 text-sm mb-8">{current.formSuccess}</p>
                 </div>
               ) : (
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onSubmit={handleFormSubmit} className="space-y-6">
+                <form action="https://formspree.io/f/xrevryka" method="POST" onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-bold uppercase text-[#eab308]">{current.formName} *</label>
-                      <input type="text" name="name" required value={formState.name} onChange={handleInputChange} className="bg-[#14110f] border border-[#eab308]/25 text-sm text-[#f5f5f7] px-4 py-3.5 focus:outline-none focus:border-[#eab308] min-h-[48px]" />
+                      <label className="text-xs font-bold uppercase text-[#2563eb]">{current.formName} *</label>
+                      <input type="text" name="name" required value={formState.name} onChange={handleInputChange} className={`border rounded-md text-sm px-4 py-3.5 focus:outline-none focus:border-[#2563eb] min-h-[48px] ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-800 text-white' : 'bg-gray-50 border-gray-200 text-black'}`} />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-bold uppercase text-[#eab308]">{current.formEmail} *</label>
-                      <input type="email" name="email" required value={formState.email} onChange={handleInputChange} className="bg-[#14110f] border border-[#eab308]/25 text-sm text-[#f5f5f7] px-4 py-3.5 focus:outline-none focus:border-[#eab308] min-h-[48px]" />
+                      <label className="text-xs font-bold uppercase text-[#2563eb]">{current.formEmail} *</label>
+                      <input type="email" name="email" required value={formState.email} onChange={handleInputChange} className={`border rounded-md text-sm px-4 py-3.5 focus:outline-none focus:border-[#2563eb] min-h-[48px] ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-800 text-white' : 'bg-gray-50 border-gray-200 text-black'}`} />
                     </div>
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold uppercase text-[#eab308]">{current.formMessage} *</label>
-                    <textarea name="message" rows={5} required value={formState.message} onChange={handleInputChange} className="bg-[#14110f] border border-[#eab308]/25 text-sm text-[#f5f5f7] px-4 py-3.5 focus:outline-none focus:border-[#eab308] resize-none"></textarea>
+                    <label className="text-xs font-bold uppercase text-[#2563eb]">{current.formMessage} *</label>
+                    <textarea name="message" rows={5} required value={formState.message} onChange={handleInputChange} className={`border rounded-md text-sm px-4 py-3.5 focus:outline-none focus:border-[#2563eb] resize-none ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-800 text-white' : 'bg-gray-50 border-gray-200 text-black'}`}></textarea>
                   </div>
-                  <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto px-8 py-4 bg-[#eab308] text-[#14110f] font-bold uppercase text-xs min-h-[48px] touch-manipulation">
+                  <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto px-8 py-4 bg-[#2563eb] text-white font-bold uppercase rounded-md text-xs min-h-[48px] hover:bg-[#1d4ed8] transition-all touch-manipulation">
                     {isSubmitting ? current.formSending : current.formBtn}
                   </button>
                 </form>
@@ -326,11 +328,10 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="bg-[#0b0908] border-t border-[#eab308]/10 py-12 relative">
-        <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-[#eab308] via-[#b22222] to-[#eab308]"></div>
+      <footer className={`border-t py-12 relative ${theme === 'dark' ? 'bg-[#0a0a0a] border-gray-900' : 'bg-white border-gray-200'}`}>
         <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
-          <h3 className="text-2xl font-bold tracking-[0.2em] font-serif text-[#eab308] mb-6">BEREKET</h3>
-          <p className="text-center text-xs text-[#f5f5f7]/40">&copy; {new Date().getFullYear()} {current.footerCredits}</p>
+          <h3 className="text-2xl font-black tracking-[0.25em] font-sans text-[#2563eb] mb-6">BEREKET</h3>
+          <p className="text-center text-xs text-gray-400">&copy; {new Date().getFullYear()} {current.footerCredits}</p>
         </div>
       </footer>
     </div>
