@@ -77,7 +77,7 @@ export default function App() {
     },
     am: {
       navAbout: "ስለ እኔ",
-      navProjects: "ፕሮجرክቶች",
+      navProjects: "ፕሮጀክቶች",
       navContact: "ያግኙኝ",
       heritageSub: "ባህልና ጥበብ ከኮድ ጋር የሚገናኙበት",
       heroTitle: "ጤና ይስጥልኝ! በረከት እባላለሁ፣",
@@ -161,9 +161,14 @@ export default function App() {
 
       <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${theme === 'dark' ? 'bg-[#0a0a0a]/85 border-[#2563eb]/20' : 'bg-[#f8f9fa]/85 border-gray-200'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <a href="#top" className="text-2xl font-black tracking-[0.25em] font-sans text-[#2563eb]">BEREKET</a>
-          </div>
+         <div className="flex items-center gap-4">
+       <img 
+        src="/me.jpg" 
+        alt="Bereket" 
+      className="w-10 h-10 rounded-full object-cover border border-[#2563eb]"
+      />
+    <a href="#top" className="text-2xl font-black tracking-[0.25em] font-sans text-[#2563eb]">BEREKET</a>
+  </div>
 
           <div className="hidden md:flex items-center gap-8">
             <a href="#about" className={`text-sm font-semibold tracking-wider transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-[#2563eb]' : 'text-gray-600 hover:text-[#2563eb]'}`}>{current.navAbout}</a>
@@ -195,7 +200,7 @@ export default function App() {
       </nav>
 
       <main className="flex-grow z-10 pt-20">
-        <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-cover bg-center">
+        <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/my-africa.jpg')" }}>
           <div className="relative max-w-4xl mx-auto px-4 text-center flex flex-col items-center justify-center py-20 z-10">
             <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-bold tracking-[0.16em] mb-6 uppercase min-h-[36px] ${theme === 'dark' ? 'border-[#2563eb]/30 bg-[#0a0a0a]/90 text-[#2563eb]' : 'border-[#2563eb]/20 bg-blue-50 text-[#2563eb]'}`}>
               <Sparkles className="w-3.5 h-3.5" />
