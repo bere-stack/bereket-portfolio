@@ -87,7 +87,7 @@ export default function App() {
       navContact: "ያግኙኝ",
       heritageSub: "ባህልና ጥበብ ከኮድ ጋር የሚገናኙበት",
       heroTitle: "ሰላም! በረከት እባላለሁ፣",
-heroBio: "ተፅዕኖ ፈጣሪ የሆኑ ዲጂታል መፍትሄዎችን ለመገንባት፤ የኮድ አመክንዮን፣ የቢዝነስ ኢኮኖሚክስን እና የባህል ውበትን አስተባብሬ የምሰራ Full-Stack Developer እና ዲዛይነር ነኝ።",
+      heroBio: "ተፅዕኖ ፈጣሪ የሆኑ ዲጂታል መፍትሄዎችን ለመገንባት፤ የኮድ አመክንዮን፣ የቢዝነስ ኢኮኖሚክስን እና የባህል ውበትን አስተባብሬ የምሰራ Full-Stack Developer እና ዲዛይነር ነኝ።",
       heroCTA: "የሠራኋቸውን እዩ",
       
       projectsTitle: "የተመረጡ ፕሮጀክቶች",
